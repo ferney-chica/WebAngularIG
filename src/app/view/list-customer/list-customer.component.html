@@ -1,0 +1,40 @@
+
+<app-header></app-header>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 a">
+            <h2>Customers list</h2>
+        </div>
+        
+        <a href="#" class="btn btn btn-primary btn-lg active" role="button" aria-pressed="true" (click)="newCustomer()">New customer</a>
+       
+        <table class="table table-hover table-dark">
+            <thead>
+            <tr >
+                <th scope="col">CustomerId</th>
+                <th scope="col">PersonID</th>
+                <th scope="col">StoreId</th>
+                <th scope="col">TerritoryId</th>
+
+                <th scope="col">Rowguid</th>
+                <th scope="col">ModifiedDate</th>
+            </thead>
+            <tbody>
+            <tr *ngFor="let customer of customers" (click)="editCustomer(customer.customerId)">
+                <th scope="row">{{customer.customerId}}</th>
+                <td>{{customer.personId}}</td>
+                <td>{{customer.storeId}}</td>
+                <td>{{customer.territoryId}}</td>
+                <td>{{customer.rowguid}}</td>
+                <td>{{customer.modifiedDate}}</td>
+            </tr>
+            
+            </tbody>
+        </table>
+</div>
+</div>
+
+
+<app-footer></app-footer>
